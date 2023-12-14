@@ -59,13 +59,13 @@ def outputResults(fileOutput, wordsFile):
 
     print(f"Results have been written to {output_file_name}")
 
-
+# This function prompts the user to enter a valid filename until a valid one is provided.
 def getValidFileName():
     while True:
         wordsFile = input(
             "Enter the text file (must be in the same directory): ")
-        if os.path.isfile(wordsFile):
+        if os.path.isfile(wordsFile) and wordsFile.lower().endswith('.txt'):
             return wordsFile
         else:
             print(
-                f"The file {wordsFile} does not exist in the current directory. Please enter a valid filename.")
+                f"Wrong input. Please enter a valid filename with a .txt extension which is in this directory.")
