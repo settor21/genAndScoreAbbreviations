@@ -8,7 +8,7 @@ This program generates and scores abbreviations from a list of names, represente
 The program reads each line as a phrase or word hence the list of names need to be on multiple lines, as shown in **trees.txt**.
 The program was tested using words(compound (-), words with foreign letters, long words, words shorter than three) and phrases. 
 
-The final output of the program will be stored as
+The final output of the program will potentially be stored as
 
 Cold
 
