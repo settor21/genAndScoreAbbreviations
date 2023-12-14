@@ -1,2 +1,2 @@
-C-- Code
-CCD
+Object-oriented programming
+OOP OPO

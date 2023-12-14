@@ -1,5 +1,3 @@
-$uperP@ssw0rd
-USD USW
 Algorithm
 AHM
 Bass
@@ -9,10 +7,12 @@ CAF
 Don't
 DNT
 Iron-willed
-INW IWD
+IWD
 Mississippi
 MPP
 Pneumonoultramicroscopicsilicovolcanoconiosis
 PCV PMV PPV PVC
 Studio54
-SDO
+STD
+SuperP@ssw0rd
+SPD SWD

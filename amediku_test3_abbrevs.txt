@@ -1,13 +1,13 @@
 Cybernetic-enhancement
-CYC
+CYB CYH
 DNA sequencing
 DSQ
 Jägermeister
 JGM
 Quantum-leap
-QLP QML
+QMP
 Quasar-technology
-QRT QTY
+QHY
 Quick brown fox
 QBF
 Xylophone
@@ -15,6 +15,6 @@ XYH
 Zephyr
 ZHR ZPR ZYR
 Ça va bien
-AVB
+  
 Übermensch
-BCH BMH
+  

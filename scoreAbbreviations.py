@@ -4,12 +4,12 @@ import itertools
 
 def scoreEachAbbreviation(gradable, markingScheme):
     scores = {}
-    #loop through each gradable abbreviation key-value pair
+    # loop through each gradable abbreviation key-value pair
     for word, abbreviations in sorted(gradable.items()):
-        wordScores = {} #dictionary to hold scores
+        wordScores = {}  # dictionary to hold scores
         for abbreviation in abbreviations:
-            cleanedText = cleanText(word) # filter the original name
-            dividedWord = cleanedText.split() # used to check indexing during test
+            cleanedText = cleanText(word)  # filter the original name
+            dividedWord = cleanedText.split()  # used to check indexing during test
             indexedWord = indexedText(cleanedText)
             if abbreviation in wordScores:
                 abbreviationScore = calculateScoreForAllCombinations(
@@ -24,10 +24,11 @@ def scoreEachAbbreviation(gradable, markingScheme):
 
 
 def calculateScore(abbreviation, indexedWord, markingScheme, word):
-    #store each letter from abbreviation as variable
+    # store each letter from abbreviation as variable
     firstLetter = abbreviation[0]
     secondLetter = abbreviation[1]
     thirdLetter = abbreviation[2]
+    
 
     # Makes it easy to score each distinct letter
     def getScore(letter):
@@ -56,15 +57,18 @@ def calculateScore(abbreviation, indexedWord, markingScheme, word):
     firstLetterScore = getScore(firstLetter)
     secondLetterScore = getScore(secondLetter)
     thirdLetterScore = getScore(thirdLetter)
-    print(f"{word}\n")
-    print(f"{abbreviation}\n")
+    # print(f"{word}\n")
+    print(f"{abbreviation}")
     print(firstLetterScore)
     print(secondLetterScore)
     print(thirdLetterScore)
+    print()
     # return the sum
     return firstLetterScore + secondLetterScore + thirdLetterScore
 
 # custom function to score words with multiple abbreviations
+
+
 def calculateScoreForAllCombinations(abbreviation, indexedWord, markingScheme, word):
     firstLetter = abbreviation[0]
     secondLetter = abbreviation[1]

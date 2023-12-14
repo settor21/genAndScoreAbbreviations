@@ -3,23 +3,20 @@ import re
 
 
 def cleanText(word):
-    #clean single words with non-alphabets first
-    # prepare compound words for cleaning
-    cleanedWord = re.sub(r"[^A-Z\s']", "_", word.upper())
+    word = re.sub(r"[^A-Z\s'À-ÖØ-Þ]", "_", word.upper())
+    cleanedWord = ""
+    test = word.split()
+    if len(test) > 1:    
+        for char in word.upper():
+            if char.isalpha() or char == "'":
+                cleanedWord += char
+            else:
+                cleanedWord += ' '  # Replace non-alphabetic characters with space
+    else:
+        cleanedWord = word
     cleanedWord = cleanedWord.replace("'", "")  # Remove apostrophes
-
-    # Check if the cleanedWord contains spaces
-    if ' ' in cleanedWord:
-        words = cleanedWord.split()
-        print(words)
-        cleanedWord = ''
-        for word in words:
-            for char in word:
-                if char.isalpha() or char == "'":
-                    cleanedWord += char
-                else:
-                    cleanedWord += ' '
     return cleanedWord
+
 
 
 def createAbbreviations(word):
