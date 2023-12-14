@@ -57,9 +57,9 @@ def outputResults(fileOutput, wordsFile):
 
                     output_file.write(f"{abbreviation}\n")
 
-    print(f"Results have been written to {output_file_name}")
-    
-    
+    print(f"Result written to {output_file_name}")
+
+
 def getValidFileName():
     while True:
         wordsFile = input(
@@ -69,5 +69,3 @@ def getValidFileName():
         else:
             print(
                 f"The file {wordsFile} does not exist in the current directory. Please enter a valid filename.")
-
-
