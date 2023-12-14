@@ -9,6 +9,10 @@ The program reads each line as a phrase or word hence the list of names need to 
 The program was tested using words(compound (-), words with foreign letters, long words, words shorter than three) and phrases. 
 
 The final output of the program will be stored as
+
 Cold
+
+
 CLD
+
 for each name with generated abbreviations in the file amediku_fileName_abbrevs.txt where CLD is the least scored generated abbreviation
