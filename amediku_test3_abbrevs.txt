@@ -3,7 +3,7 @@ CYC
 DNA sequencing
 DSQ
 Jägermeister
-JÄG JÄM
+JGM
 Quantum-leap
 QLP QML
 Quasar-technology
@@ -15,6 +15,6 @@ XYH
 Zephyr
 ZHR ZPR ZYR
 Ça va bien
-ÇVB
+AVB
 Übermensch
-ÜBH
+BCH BMH
