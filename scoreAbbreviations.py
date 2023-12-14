@@ -118,7 +118,6 @@ def calculateScoreForAllCombinations(abbreviation, indexedWord, markingScheme, w
     # function to determine a letter score using the specified rules
 
     def getAllScores(letter):
-
         index_values = indexedWord.get(letter, [3])
         index_value = index_values.pop(0) if index_values else 3
         # rules specified
@@ -163,7 +162,6 @@ def findLowestScoreAbbreviation(scores):
     for word, wordScores in sorted(scores.items()):
         lowest_score = float('inf')  # Initialize with a very high score
         lowest_score_abbreviations = []
-
         for abbreviation, score in sorted(wordScores.items()):
             # Check if the score is lower than the current lowest score
             if score < lowest_score:
@@ -171,13 +169,11 @@ def findLowestScoreAbbreviation(scores):
                 lowest_score = score
                 lowest_score_abbreviations = [abbreviation]
             elif score == lowest_score: # check for similar scores and add them
-                lowest_score_abbreviations.append(abbreviation)
-                
+                lowest_score_abbreviations.append(abbreviation)                
         # Update the lowestScoredAbbreviation dictionary with the final result
         if word not in lowestScoredAbbreviation:
             lowestScoredAbbreviation[word] = {}
         #join multiple abbreviations or the single abbreviation with lowest score into screen 
         lowestScoredAbbreviation[word][' '.join(
             lowest_score_abbreviations)] = lowest_score  # add them to the dictionary
-
     return lowestScoredAbbreviation #return the final dictionary
