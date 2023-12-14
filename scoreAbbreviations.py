@@ -1,14 +1,15 @@
 from abbreviationRules import *
 import itertools
 
+
 def scoreEachAbbreviation(gradable, markingScheme):
     scores = {}
-
+    #loop through each gradable abbreviation key-value pair
     for word, abbreviations in sorted(gradable.items()):
-        wordScores = {}
+        wordScores = {} #dictionary to hold scores
         for abbreviation in abbreviations:
-            cleanedText = cleanText(word)
-            dividedWord = cleanedText.split()
+            cleanedText = cleanText(word) # filter the original name
+            dividedWord = cleanedText.split() # used to check indexing during test
             indexedWord = indexedText(cleanedText)
             if abbreviation in wordScores:
                 abbreviationScore = calculateScoreForAllCombinations(
@@ -21,16 +22,23 @@ def scoreEachAbbreviation(gradable, markingScheme):
         scores[word] = wordScores
     return scores
 
+
 def calculateScore(abbreviation, indexedWord, markingScheme, word):
+    #store each letter from abbreviation as variable
     firstLetter = abbreviation[0]
     secondLetter = abbreviation[1]
     thirdLetter = abbreviation[2]
 
     # Makes it easy to score each distinct letter
     def getScore(letter):
+        """
+        For repeated instances of a letter within a word, 
+        obtain its index from the word index and shift to the next index 
+        to avoid repeated indexing of letters in abbreviations like COO. 
+        """
         index_values = indexedWord.get(letter, [3])
         index_value = index_values.pop(0) if index_values else 3
-
+        # specified rules
         if index_value == 0:
             return 0
         elif index_value == -1:
@@ -44,22 +52,34 @@ def calculateScore(abbreviation, indexedWord, markingScheme, word):
             return 2 + markingScheme.get(letter, 0)
         else:
             return 3 + markingScheme.get(letter, 0)
-
+    # score each letter
     firstLetterScore = getScore(firstLetter)
     secondLetterScore = getScore(secondLetter)
     thirdLetterScore = getScore(thirdLetter)
-
+    print(f"{word}\n")
+    print(f"{abbreviation}\n")
+    print(firstLetterScore)
+    print(secondLetterScore)
+    print(thirdLetterScore)
+    # return the sum
     return firstLetterScore + secondLetterScore + thirdLetterScore
 
+# custom function to score words with multiple abbreviations
 def calculateScoreForAllCombinations(abbreviation, indexedWord, markingScheme, word):
     firstLetter = abbreviation[0]
     secondLetter = abbreviation[1]
     thirdLetter = abbreviation[2]
+    # function to determine a letter score using the specified rules
 
     def getAllScores(letter):
+        """
+        For repeated instances of a letter within a word, 
+        obtain its index from the word index and shift to the next index 
+        to avoid repeated indexing of letters in abbreviations like COO. 
+        """
         index_values = indexedWord.get(letter, [3])
         index_value = index_values.pop(0) if index_values else 3
-
+        # rules specified
         if index_value == 0:
             return 0
         elif index_value == -1:
@@ -89,6 +109,7 @@ def calculateScoreForAllCombinations(abbreviation, indexedWord, markingScheme, w
         min_score = min(min_score, total_score)
 
     return min_score
+
 
 def findLowestScoreAbbreviation(scores):
     lowestScoredAbbreviation = {}
