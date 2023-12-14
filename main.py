@@ -2,7 +2,6 @@ from fileProcessors import *
 from abbreviationRules import *
 from scoreAbbreviations import *
 
-
 def main():
     markingScheme = 'values.txt'
     wordsFile = getValidFileName()
