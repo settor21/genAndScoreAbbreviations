@@ -66,11 +66,11 @@ def calculateScore(abbreviation, indexedWord, markingScheme, word):
     secondLetterScore = getScore(secondLetter)
     thirdLetterScore = getScore(thirdLetter)
     # print(f"{word}\n")
-    print(f"{abbreviation}")
-    print(firstLetterScore)
-    print(secondLetterScore)
-    print(thirdLetterScore)
-    print()
+    # print(f"{abbreviation}")
+    # print(firstLetterScore)
+    # print(secondLetterScore)
+    # print(thirdLetterScore)
+    # print()
     # return the sum
     return firstLetterScore + secondLetterScore + thirdLetterScore
 
