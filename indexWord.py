@@ -1,8 +1,6 @@
 text = "Data Engineering"
 text = text.upper()
 result_dict = {}
-
-
 words = text.split()
 
 for word in words:

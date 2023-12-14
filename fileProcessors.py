@@ -50,14 +50,14 @@ def outputResults(fileOutput, wordsFile):
     with open(output_file_name, 'w', encoding='utf-8') as output_file:
         for word, abbreviations in fileOutput.items():
             output_file.write(f"{word}\n")  # the name used
-            for score, abbreviation in abbreviations.items():
+            for abbreviation, score in abbreviations.items():
                 if score is None or score == float('inf'):
                     output_file.write("  \n")  # print blanks
                 else:
 
                     output_file.write(f"{abbreviation}\n")
 
-    print(f"Result written to {output_file_name}")
+    print(f"Results have been written to {output_file_name}")
 
 
 def getValidFileName():

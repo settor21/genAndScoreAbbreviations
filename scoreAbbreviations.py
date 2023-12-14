@@ -107,7 +107,7 @@ def findLowestScoreAbbreviation(scores):
         if word not in lowestScoredAbbreviation:
             lowestScoredAbbreviation[word] = {}
 
-        lowestScoredAbbreviation[word][lowest_score] = ' '.join(
-            lowest_score_abbreviations)
+        lowestScoredAbbreviation[word][' '.join(
+            lowest_score_abbreviations)] = lowest_score
 
     return lowestScoredAbbreviation

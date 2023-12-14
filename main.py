@@ -13,20 +13,19 @@ def main():
     print(scoreCard)
     print("\nWords for Abbreviations:")
     print(wordList)
-
-    print("\nAbbreviations:")
+    # print("\nAbbreviations:")
     gradable = {}
     for word in wordList:
         abbreviations = createAbbreviations(word)
         gradable[word] = list(abbreviations)
-    print(gradable)
+    # print(gradable)
     uniqueGradables = removeDuplicateAbbreviations(gradable)
-    
-    print("\nAbbreviation Scores:")
+    # print("\nAbbreviation Scores:")
     scores = scoreEachAbbreviation(uniqueGradables, scoreCard)
-    print(scores)
+    # print(scores)
 
     fileOutput = findLowestScoreAbbreviation(scores)
+    print(fileOutput)
     outputResults(fileOutput, wordsFile)
 
 if __name__ == "__main__":
