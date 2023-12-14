@@ -1,3 +1,5 @@
+$uperP@ssw0rd
+  
 Algorithm
 AHM
 Bass
@@ -14,5 +16,3 @@ Pneumonoultramicroscopicsilicovolcanoconiosis
 PCV PMV PPV PVC
 Studio54
 STD
-SuperP@ssw0rd
-SPD SWD

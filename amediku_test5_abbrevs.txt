@@ -1,2 +1,6 @@
+C-- Code
+CCD
+Jägermeister
+JGM
 Object-oriented programming
-OOP OPO
+OOP

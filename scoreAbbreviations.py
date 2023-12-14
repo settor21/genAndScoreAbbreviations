@@ -23,12 +23,16 @@ def scoreEachAbbreviation(gradable, markingScheme):
     return scores
 
 
+def swap(lst):
+    if len(lst) >= 2:
+        lst[0], lst[1] = lst[1], lst[0]
+
 def calculateScore(abbreviation, indexedWord, markingScheme, word):
     # store each letter from abbreviation as variable
     firstLetter = abbreviation[0]
     secondLetter = abbreviation[1]
     thirdLetter = abbreviation[2]
-    
+     
 
     # Makes it easy to score each distinct letter
     def getScore(letter):
@@ -39,6 +43,10 @@ def calculateScore(abbreviation, indexedWord, markingScheme, word):
         """
         index_values = indexedWord.get(letter, [3])
         index_value = index_values.pop(0) if index_values else 3
+        
+        # Swap next two positions if the condition is met
+        if index_value == 0 and firstLetter == thirdLetter and firstLetter != secondLetter:
+            swap(index_values)
         # specified rules
         if index_value == 0:
             return 0
