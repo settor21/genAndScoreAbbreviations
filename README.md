@@ -1,7 +1,7 @@
 # genAndScoreAbbreviations
 This program generates and scores abbreviations from a list of names, represented as single lines of text in a file. It consists of four files: 
  - **main.py** to run the program to score and generate abbreviations
- -  **fileProcessors.py** to read values from the scorecard(value.txt) and the list of names (user inputs a text file)
+ -  **fileProcessors.py** to read values from the scorecard(value.txt) and the list of names (user inputs a text file which is located in the current directory)
  -  **abbreviationRules.py** to convert the names to uppercase, filter out non-alphabets and generate three-letter abbreviations
  -  **scoreAbbreviations.py** to score the non-duplicate abbreviations based on the scorecard, first and last letter index values.
 
@@ -14,4 +14,6 @@ Cold
 
 CLD
 
-for each name with generated abbreviations in the file amediku_fileName_abbrevs.txt where CLD is the least scored generated abbreviation
+for each name with generated abbreviations in the file amediku_fileName_abbrevs.txt where 
+- CLD is the least scored generated abbreviation
+- fileName is the fileName given
