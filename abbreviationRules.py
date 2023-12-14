@@ -3,15 +3,22 @@ import re
 
 
 def cleanText(word):
+    #clean single words with non-alphabets first
+    # prepare compound words for cleaning
     cleanedWord = re.sub(r"[^A-Z\s']", "_", word.upper())
     cleanedWord = cleanedWord.replace("'", "")  # Remove apostrophes
 
     # Check if the cleanedWord contains spaces
     if ' ' in cleanedWord:
         words = cleanedWord.split()
-        cleanedWord = " ".join(
-            [word if word.isalpha() else "_" for word in words])
-
+        print(words)
+        cleanedWord = ''
+        for word in words:
+            for char in word:
+                if char.isalpha() or char == "'":
+                    cleanedWord += char
+                else:
+                    cleanedWord += ' '
     return cleanedWord
 
 

@@ -31,7 +31,7 @@ def main():
 
     fileOutput = findLowestScoreAbbreviation(scores)
     # print(fileOutput)
-    print(cleanText("Jägermeister"))
+    print(cleanText("C++ Code"))
     outputResults(fileOutput, wordsFile)
 
 
