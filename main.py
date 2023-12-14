@@ -2,6 +2,7 @@ from fileProcessors import *
 from abbreviationRules import *
 from scoreAbbreviations import *
 
+
 def main():
     markingScheme = 'values.txt'
     wordsFile = getValidFileName()
@@ -22,11 +23,16 @@ def main():
     uniqueGradables = removeDuplicateAbbreviations(gradable)
     # print("\nAbbreviation Scores:")
     scores = scoreEachAbbreviation(uniqueGradables, scoreCard)
-    # print(scores)
+    for name, abbreviations in scores.items():
+        print(name)
+        for abbrev, score in abbreviations.items():
+            print(f"{abbrev} - {score}")
+        print()
 
     fileOutput = findLowestScoreAbbreviation(scores)
     print(fileOutput)
     outputResults(fileOutput, wordsFile)
+
 
 if __name__ == "__main__":
     main()

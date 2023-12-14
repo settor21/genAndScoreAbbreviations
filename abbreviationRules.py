@@ -1,11 +1,9 @@
 # this functions are used to define the rules for suitable abbreviations
+import re
+
+
 def cleanText(word):
-    cleanedWord = ""
-    for char in word.upper():
-        if char.isalpha() or char == "'":
-            cleanedWord += char
-        else:
-            cleanedWord += ' '  
+    cleanedWord = re.sub(r'[^A-Z\']', ' ', word.upper())
     cleanedWord = cleanedWord.replace("'", "")  # Remove apostrophes
     return cleanedWord
 
