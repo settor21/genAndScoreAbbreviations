@@ -51,6 +51,8 @@ def createAbbreviations(word):
     return abbreviations
 
 # remove abbreviations which appear in more than one name
+
+
 def removeDuplicateAbbreviations(dictionary):
     moreThanOne = []  # list to hold duplicates
 
@@ -69,7 +71,8 @@ def removeDuplicateAbbreviations(dictionary):
     for key, value in dictionary.items():
         # Create a cleaned list without duplicate items
         cleaned_value = [item for item in value if item not in moreThanOne]
-        cleaned_dictionary[key] = cleaned_value
+        # eliminate repeated correct self-duplicated values
+        cleaned_dictionary[key] = list(set(cleaned_value))
 
     print("\n Duplicates Found:")
     print(list(set(moreThanOne)))
@@ -85,12 +88,12 @@ def indexedText(text):
     text = text.upper()  # Convert text to uppercase
     indexedScores = {}  # Dictionary to store the index of each character
     words = text.split()  # Split the text into words to manage compound words
-    for word in words: # for aach entry
-        for index, char in enumerate(word): #for each letter and its index
+    for word in words:  # for aach entry
+        for index, char in enumerate(word):  # for each letter and its index
             if char not in indexedScores:
                 # Initialize an empty list for each character
                 indexedScores[char] = []
-            # Check if the character is the last in the word and 
+            # Check if the character is the last in the word and
             # the word has more than one character
             if index == len(word) - 1 and len(word) > 1:
                 # Append -1 to represent the last character in the word
