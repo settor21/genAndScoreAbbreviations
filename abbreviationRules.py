@@ -72,7 +72,7 @@ def removeDuplicateAbbreviations(dictionary):
         # Create a cleaned list without duplicate items
         cleaned_value = [item for item in value if item not in moreThanOne]
         # eliminate repeated correct self-duplicated values
-        cleaned_dictionary[key] = list(set(cleaned_value))
+        cleaned_dictionary[key] = list(cleaned_value)
 
     print("\n Duplicates Found:")
     print(list(set(moreThanOne)))

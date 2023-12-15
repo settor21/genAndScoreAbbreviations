@@ -33,17 +33,17 @@ def main():
     print(uniqueGradables)  # Display words with unique abbreviations
 
     print("\nAbbreviation Scores:")
-    scores = scoreEachAbbreviation(
-        uniqueGradables, scoreCard)  # Score each abbreviation
-    for name, abbreviations in scores.items():
-        print(name)
-        for abbrev, score in abbreviations.items():
-            # Display each abbreviation and its score
-            print(f"{abbrev} - {score}")
-        print()
-    # Find the lowest scored abbreviation for each word
-    fileOutput = findLowestScoreAbbreviation(scores)
-    outputResults(fileOutput, wordsFile)  # Output the results to a file
+    # scores = scoreEachAbbreviation(
+    #     uniqueGradables, scoreCard)  # Score each abbreviation
+    # for name, abbreviations in scores.items():
+    #     print(name)
+    #     for abbrev, score in abbreviations.items():
+    #         # Display each abbreviation and its score
+    #         print(f"{abbrev} - {score}")
+    #     print()
+    # # Find the lowest scored abbreviation for each word
+    # fileOutput = findLowestScoreAbbreviation(scores)
+    # outputResults(fileOutput, wordsFile)  # Output the results to a file
 
 
 # Execute the main function if the script is run directly
