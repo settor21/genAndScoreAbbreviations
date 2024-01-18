@@ -33,8 +33,7 @@ def main():
     print(uniqueGradables)  # Display words with unique abbreviations
 
     print("\nAbbreviation Scores:")
-    scores = scoreEachAbbreviation(
-        uniqueGradables, scoreCard)  # Score each abbreviation
+    scores = scoreEachAbbreviation(uniqueGradables, scoreCard)  # Score each abbreviation
     for name, abbreviations in scores.items():
         print(name)
         for abbrev, score in abbreviations.items():
